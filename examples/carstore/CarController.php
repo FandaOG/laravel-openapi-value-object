@@ -17,11 +17,11 @@ class CarController
 	 * Create car
 	 */
 	#[OpenApi\Operation('createCar')]
-	// RequestBodyFactory are from repository, CarValueObject is defined by user
+	// RequestBodyFactory is from repository, CarValueObject is defined by user
 	#[OpenApi\RequestBody(RequestBodyFactory::class, CarValueObject::class)]
-	// ParameterFactory are from repository, CarCreateParams is defined by user
+	// ParameterFactory is from repository, CarCreateParams is defined by user
 	#[OpenApi\Parameters(ParameterFactory::class, CarCreateParams::class)]
-	// ResponseFactory are from repository, CarResponse is defined by user
+	// ResponseFactory is from repository, CarResponse is defined by user
 	#[OpenApi\Response(ResponseFactory::class, 200, null, CarResponse::class)]
 	public function create()
 	{
