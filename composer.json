@@ -1,0 +1,54 @@
+{
+  "name": "og-soft/laravel-openapi-value-object",
+  "description": "Generate OpenAPI Specification for Laravel Applications from value objects",
+  "keywords": [
+    "laravel",
+    "openapi",
+    "api",
+    "documentation",
+    "docs",
+    "rest",
+    "swagger"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Frantisek Mazura",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "cweagans/composer-patches": "^1.7",
+    "doctrine/annotations": "^1.12",
+    "vyuldashev/laravel-openapi": "dev-master"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^5.3|^6.0",
+    "phpunit/phpunit": "^9.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "OGSoft\\LaravelOpenApiValueObject\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "OGSoft\\LaravelOpenApiValueObject\\Tests\\": "tests/",
+      "Examples\\Carstore\\": "examples/carstore/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "patches": {
+      "vyuldashev/laravel-openapi": {
+        "Add PR": "https://github.com/vyuldashev/laravel-openapi/pull/37.patch"
+      }
+    }
+  }
+}
