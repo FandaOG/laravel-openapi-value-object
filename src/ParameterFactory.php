@@ -16,7 +16,6 @@ class ParameterFactory extends AbstractFactory implements ParametersFactoryInter
 
 	public function build(): array
 	{
-		var_dump($this->data);
 		$schemas = $this->getSchema($this->data, 10);
 
 		$out = [];
