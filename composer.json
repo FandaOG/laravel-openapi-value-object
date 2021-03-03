@@ -22,7 +22,7 @@
     "php": "^8.0",
     "cweagans/composer-patches": "^1.7",
     "doctrine/annotations": "^1.12",
-    "vyuldashev/laravel-openapi": "dev-master"
+    "ogsoft/laravel-openapi": "^1.2"
   },
   "require-dev": {
     "orchestra/testbench": "^5.3|^6.0",
@@ -43,12 +43,5 @@
     "sort-packages": true
   },
   "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "patches": {
-      "vyuldashev/laravel-openapi": {
-        "Add PR": "https://github.com/vyuldashev/laravel-openapi/pull/37.patch"
-      }
-    }
-  }
+  "prefer-stable": true
 }
