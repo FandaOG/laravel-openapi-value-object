@@ -166,3 +166,7 @@ Check `examples/cartore/CarController.php` controller and `exmples/carstore/Open
 # TODO
 
 Update `composer.json` after [pull request](https://github.com/vyuldashev/laravel-openapi/pull/37) is accepted.
+
+# Changes
+
+- 2021-03-05 - support `@example`

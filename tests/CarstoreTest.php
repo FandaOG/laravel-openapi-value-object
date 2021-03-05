@@ -28,6 +28,7 @@ class CarstoreTest extends TestCase
 						[
 							'title' => 'Car name',
 							'description' => 'This is a car name description...',
+							'example' => 'My best car, Skoda Octavia, M1A1',
 							'type' => 'string',
 							'nullable' => false,
 						],

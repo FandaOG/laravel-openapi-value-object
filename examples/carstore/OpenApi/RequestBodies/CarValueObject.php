@@ -9,6 +9,9 @@ class CarValueObject
 	 *
 	 * This is a car name description...
 	 *
+	 * @example My best car
+	 * @example Skoda Octavia
+	 * @example M1A1
 	 * @var string
 	 */
 	protected string $name;

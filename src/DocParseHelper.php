@@ -58,6 +58,27 @@ class DocParseHelper
 		return $out;
 	}
 
+	public static function getExamples(string $phpDoc)
+	{
+		$out = null;
+		$lines = explode("\n", $phpDoc);
+		foreach ($lines as $line) {
+			$line = trim($line);
+			$line = str_replace("/**", '', $line);
+			$line = str_replace("*/", '', $line);
+			$line = str_replace("*", '', $line);
+			$line = ltrim($line);
+			preg_match("/@example (.*)/", $line, $matches);
+			$example = $matches[1] ?? null;
+			if (!empty($example)) {
+				if (empty($out)) {
+					$out = [];
+				}
+				$out[] = $example;
+			}
+		}
+		return $out;
+	}
 
 	public static function getAllParams(string $phpDoc)
 	{
@@ -83,11 +104,15 @@ class DocParseHelper
 	public static function addCommentsToSchema(string $phpDoc, Schema $schema): Schema
 	{
 		$comments = self::getComments($phpDoc);
+		$examples = self::getExamples($phpDoc);
 
 		if (!empty($comments) && sizeof($comments) > 0) {
 			$schema = $schema->title($comments[0]);
 			if ((sizeof($comments) > 1)) {
 				$schema = $schema->description(implode("\n", array_slice($comments, 1)));
+			}
+			if (!empty($examples)) {
+				$schema = $schema->example(implode(', ', $examples));
 			}
 		}
 
