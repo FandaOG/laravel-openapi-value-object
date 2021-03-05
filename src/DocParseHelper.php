@@ -112,7 +112,7 @@ class DocParseHelper
 				$schema = $schema->description(implode("\n", array_slice($comments, 1)));
 			}
 			if (!empty($examples)) {
-				$schema = $schema->example(implode(', ', $examples));
+				$schema = $schema->example(implode('|', $examples));
 			}
 		}
 
